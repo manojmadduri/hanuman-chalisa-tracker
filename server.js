@@ -9,23 +9,21 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static('public'));
 app.use(express.json());
 
-mongoose.connect('mongodb://localhost:27017/hanuman_chalisa_tracker', {
+mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
 
 const authenticate = (req, res, next) => {
     const token = req.headers.authorization?.split(' ')[1];
-    console.log('Authenticating token:', token);
     if (!token) {
         return res.status(401).json({ message: 'No token, authorization denied' });
     }
     try {
-        const decoded = jwt.verify(token, 'secretkey');
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
         req.userId = decoded.userId;
         next();
     } catch (error) {
-        console.error('Token verification failed:', error);
         res.status(400).json({ message: 'Invalid token' });
     }
 };
@@ -51,7 +49,7 @@ app.post('/login', async (req, res) => {
         if (!isMatch) {
             return res.status(400).json({ message: 'Invalid email or password' });
         }
-        const token = jwt.sign({ userId: user._id }, 'secretkey', { expiresIn: '1h' });
+        const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
         res.json({ token, userId: user._id });
     } catch (error) {
         res.status(400).json({ error: error.message });
