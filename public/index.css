@@ -1,0 +1,18 @@
+@import url('common.css');
+
+.container {
+    text-align: center;
+}
+
+.total-recitations {
+    font-size: 2em;
+    margin: 20px 0;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+#leaderboard {
+    margin-top: 20px;
+}

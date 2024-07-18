@@ -1,0 +1,14 @@
+@import url('common.css');
+
+.container {
+    text-align: center;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+#login-message {
+    color: red;
+    font-weight: bold;
+}

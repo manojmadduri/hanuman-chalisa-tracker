@@ -1,0 +1,14 @@
+@import url('common.css');
+
+.container {
+    text-align: center;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+#register-message {
+    color: red;
+    font-weight: bold;
+}

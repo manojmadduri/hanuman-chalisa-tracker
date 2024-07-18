@@ -1,0 +1,33 @@
+@import url('common.css');
+
+.container {
+    text-align: center;
+}
+
+.profile-info {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.profile-info img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile-info h2, .profile-info p {
+    margin: 10px 0;
+    text-shadow: 1px 1px 2px #000;
+    text-align: center;
+}
+
+.recitation-stats {
+    margin-top: 20px;
+}
+
+#recitation-form {
+    margin-top: 20px;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="hanuman_logo.png" alt="Hanuman Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>User Profile</h1>
+        <div class="profile-info">
+            <img id="profile-picture" src="default-profile.png" alt="Profile Picture">
+            <h2 id="username">User Name</h2>
+            <p>Total Recitations: <span id="user-total-recitations">0</span></p>
+            <p>Daily Goal: <span id="daily-goal">0</span></p>
+            <p>Weekly Goal: <span id="weekly-goal">0</span></p>
+        </div>
+        <div class="recitation-stats">
+            <h2>Recitation Stats</h2>
+            <canvas id="recitation-chart"></canvas>
+        </div>
+        <form id="recitation-form">
+            <input type="number" id="count" placeholder="Number of recitations" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script src="profile.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
